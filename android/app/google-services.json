@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "320407815489",
+    "project_id": "meusmomentos-b1570",
+    "storage_bucket": "meusmomentos-b1570.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320407815489:android:5a76fea0d51932bd1d0dc0",
+        "android_client_info": {
+          "package_name": "br.com.daniellima.meusmomentos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320407815489-iro9hjvpfk65spvfjd3omkmn8g84eui6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcx5UlB-gIUxqUsesJi7joWZaO7tDbfXk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320407815489-iro9hjvpfk65spvfjd3omkmn8g84eui6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
