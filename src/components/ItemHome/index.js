@@ -2,6 +2,9 @@ import React from 'react';
 
 import {TouchableOpacity, View, Text, Image} from 'react-native';
 
+// Utils
+import Format from '../../utils/format';
+
 //Styles
 import Styles from './styles';
 
@@ -19,7 +22,9 @@ const ItemHome = (props) => {
           {data.latitude} / {data.longitude}
         </Text>
         <Text style={Styles.title}>Data / Hora</Text>
-        <Text style={Styles.subTitle}>{data.datetime}</Text>
+        <Text style={Styles.subTitle}>
+          {Format.formatDateBr(data.datetime)}
+        </Text>
       </View>
     </TouchableOpacity>
   );

@@ -2,6 +2,9 @@ import React from 'react';
 import {View, Image, Text, TouchableOpacity, Alert} from 'react-native';
 import database from '@react-native-firebase/database';
 
+// Utils
+import Format from '../../utils/format';
+
 // Styles
 import Styles from './style';
 
@@ -49,7 +52,7 @@ const Moment = (props) => {
             {latitude} / {longitude}
           </Text>
           <Text style={Styles.title}>Data / Hora</Text>
-          <Text style={Styles.subTitle}>{datetime}</Text>
+          <Text style={Styles.subTitle}>{Format.formatDateBr(datetime)}</Text>
         </View>
         <View style={Styles.viewButtons}>
           <TouchableOpacity
