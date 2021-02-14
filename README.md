@@ -21,11 +21,7 @@ To check the changes to Firebase Storage and Firebase Realtime Database just cha
 
 - Before (No pictures)
 
-<<<<<<< HEAD
   <img src="https://github.com/devdaniellima/MeusMomentos/blob/master/images/AppNoPictures.png?raw=true" />
-=======
-  <img src="https://github.com/devdaniellima/wsml-vscode/blob/master/images/AppNoPictures.png?raw=true" />
->>>>>>> b7fcd8cc520e3be8f167f12156f19a530deedb0f
 
 - During (Save the moment)
 
@@ -35,14 +31,8 @@ To check the changes to Firebase Storage and Firebase Realtime Database just cha
 
 - Before (No pictures)
 
-<<<<<<< HEAD
   <img src="https://github.com/devdaniellima/MeusMomentos/blob/master/images/StorageNoPictures.png?raw=true" />
 
   <img src="https://github.com/devdaniellima/MeusMomentos/blob/master/images/DatabaseNoPictures.png?raw=true" />
-=======
-  <img src="https://github.com/devdaniellima/wsml-vscode/blob/master/images/StorageNoPictures.png?raw=true" />
-
-  <img src="https://github.com/devdaniellima/wsml-vscode/blob/master/images/DatabaseNoPictures.png?raw=true" />
->>>>>>> b7fcd8cc520e3be8f167f12156f19a530deedb0f
 
 - After
