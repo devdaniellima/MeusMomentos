@@ -25,7 +25,17 @@ To check the changes to Firebase Storage and Firebase Realtime Database just cha
 
 - During (Save the moment)
 
+  <img src="https://github.com/devdaniellima/MeusMomentos/blob/master/images/AppUsage1.png?raw=true" width="250"/>
+
+  <img src="https://github.com/devdaniellima/MeusMomentos/blob/master/images/AppUsage2.png?raw=true" width="250"/>
+
+  <img src="https://github.com/devdaniellima/MeusMomentos/blob/master/images/AppUsage3.png?raw=true" width="250"/>
+
 - After
+
+  <img src="https://github.com/devdaniellima/MeusMomentos/blob/master/images/AppUsage4.png?raw=true" width="250"/>
+
+  <img src="https://github.com/devdaniellima/MeusMomentos/blob/master/images/AppUsage5.png?raw=true" width="250"/>
 
 ### Firebase
 
@@ -36,3 +46,7 @@ To check the changes to Firebase Storage and Firebase Realtime Database just cha
   <img src="https://github.com/devdaniellima/MeusMomentos/blob/master/images/DatabaseNoPictures.png?raw=true" />
 
 - After
+
+  <img src="https://github.com/devdaniellima/MeusMomentos/blob/master/images/StorageUsage1.png?raw=true" />
+
+  <img src="https://github.com/devdaniellima/MeusMomentos/blob/master/images/DatabaseUsage1.png?raw=true" />
