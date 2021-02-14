@@ -21,9 +21,8 @@ const Home = (props) => {
     setLoading(true);
     await database()
       .ref('photos')
-      .once('value', (result) => {
+      .on('value', (result) => {
         setLoading(false);
-        console.log(result);
         setData(result.toJSON());
       });
   };
@@ -64,7 +63,14 @@ const Home = (props) => {
         ) : (
           <ScrollView style={Styles.scroll}>
             {Object.keys(data).map((item, index) => {
-              return <ItemHome key={index} data={data[item]} />;
+              return (
+                <ItemHome
+                  key={index}
+                  id={item}
+                  data={data[item]}
+                  navigation={navigation}
+                />
+              );
             })}
           </ScrollView>
         )}

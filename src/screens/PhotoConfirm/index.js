@@ -40,7 +40,6 @@ const PhotoConfirm = (props) => {
         );
       });
       task.then(async () => {
-        console.log('Image uploaded to the bucket!');
         const url = await reference.getDownloadURL();
         const now = new Date();
 
@@ -55,7 +54,6 @@ const PhotoConfirm = (props) => {
           .then(() => {
             setTransferred(true);
             setSending(false);
-            console.log('inserted');
           })
           .catch((error) => {
             setTransferred(false);

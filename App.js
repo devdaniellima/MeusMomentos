@@ -7,8 +7,11 @@
  */
 
 import React from 'react';
+import {LogBox} from 'react-native';
 
 import AppInsideNavigation from './src/navigation/AppInsideNavigation';
+
+LogBox.ignoreLogs(['asynchronous tasks']);
 
 const App = () => {
   return (
