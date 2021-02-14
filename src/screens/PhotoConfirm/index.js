@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
+import database from '@react-native-firebase/database';
 
 import {Text, View, TouchableOpacity, Image} from 'react-native';
-import {RNCamera} from 'react-native-camera';
 import storage from '@react-native-firebase/storage';
-import Geolocation from '@react-native-community/geolocation';
-import {Spinner} from 'native-base';
+
+// Components
+import Loader from '../../components/Loader';
 
 // Styles
 import Styles from './styles';
-import {useEffect} from 'react';
 
 const PhotoConfirm = (props) => {
   const {route, navigation} = props;
@@ -16,6 +16,7 @@ const PhotoConfirm = (props) => {
 
   const [sending, setSending] = useState(false);
   const [percent, setPercent] = useState(0);
+  const [transferred, setTransferred] = useState(false);
 
   const sendPhoto = async () => {
     await setPercent(0);
@@ -41,11 +42,26 @@ const PhotoConfirm = (props) => {
       task.then(async () => {
         console.log('Image uploaded to the bucket!');
         const url = await reference.getDownloadURL();
-        console.log('FINISHED');
-        console.log('url: ', url);
-        console.log(data);
+        const now = new Date();
 
-        setSending(false);
+        const newReference = database().ref('/photos').push();
+        newReference
+          .set({
+            latitude: data.latitude,
+            longitude: data.longitude,
+            url,
+            datetime: now.getTime(),
+          })
+          .then(() => {
+            setTransferred(true);
+            setSending(false);
+            console.log('inserted');
+          })
+          .catch((error) => {
+            setTransferred(false);
+            setSending(false);
+            console.log(error);
+          });
       });
     } catch (error) {
       console.log(error);
@@ -58,7 +74,7 @@ const PhotoConfirm = (props) => {
       <View style={Styles.viewImage}>
         <Image style={Styles.image} source={{uri: data.uri}} />
         <View style={Styles.viewSendSuccess}>
-          {percent === '100' ? (
+          {transferred ? (
             <Text style={Styles.textSendSuccess}>Enviado com sucesso!</Text>
           ) : (
             <></>
@@ -68,31 +84,28 @@ const PhotoConfirm = (props) => {
       <View style={Styles.viewButtons}>
         <TouchableOpacity
           style={Styles.viewButtonBack}
-          onPress={() => navigation.goBack()}>
+          onPress={() => {
+            if (transferred) {
+              navigation.navigate('Home');
+            } else {
+              navigation.goBack();
+            }
+          }}>
           <Text style={Styles.textButton}>Voltar</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          disabled={percent === '100'}
+          disabled={transferred}
           style={
-            percent === '100'
-              ? Styles.viewButtonSendDisabled
-              : Styles.viewButtonSend
+            transferred ? Styles.viewButtonSendDisabled : Styles.viewButtonSend
           }
           onPress={() => sendPhoto()}>
           <Text
-            style={
-              percent === '100' ? Styles.textButtonDisabled : Styles.textButton
-            }>
+            style={transferred ? Styles.textButtonDisabled : Styles.textButton}>
             Salvar
           </Text>
         </TouchableOpacity>
       </View>
-      {sending && (
-        <View style={Styles.viewSending}>
-          <Spinner color="white" />
-          <Text style={Styles.textPercent}>{percent} %</Text>
-        </View>
-      )}
+      <Loader percent={percent} visible={sending} />
     </View>
   );
 };

@@ -19,7 +19,7 @@ const Photo = (props) => {
         // COORDS LOCATION
         const data = {
           latitude: info.coords.latitude,
-          logintude: info.coords.longitude,
+          longitude: info.coords.longitude,
         };
 
         try {
@@ -58,7 +58,9 @@ const Photo = (props) => {
           buttonNegative: 'Cancelar',
         }}
         captureAudio={false}>
-        <Text style={Styles.textTop}>Capture um momento importante seu!</Text>
+        <Text style={Styles.textTop}>
+          Capture um momento que você ache importante!
+        </Text>
         <View style={Styles.viewButtons}>
           <TouchableOpacity
             onPress={() => onTakePicture()}

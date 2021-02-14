@@ -56,15 +56,7 @@ export default StyleSheet.create({
     fontSize: 25,
     color: 'rgba(0,0,0,0.2)',
   },
-  viewSending: {
-    position: 'absolute',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0.8)',
-    width: '100%',
-    height: '100%',
-  },
-  textPercent: {color: 'white'},
+
   viewSendSuccess: {
     paddingTop: 10,
   },
